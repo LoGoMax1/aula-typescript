@@ -16,6 +16,9 @@ const meuCarro: Carros = {
 };
 
 console.log(meuCarro.ano);
+console.log(meuCarro.marca);
+console.log(meuCarro.modelo);
+console.log(meuCarro.motor);
 
 //Exercicio 2:
 
