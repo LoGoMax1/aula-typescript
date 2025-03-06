@@ -33,55 +33,47 @@ console.log(multiplique(10, 5));
 //Exercicios 3:
 
 
-class inverterArray<T> {
-    private itens: T[] = [];
-    adicionarItem(item: T): void {
-        this.itens.push(item);
-    }
-    obterItens(): T[] {
-        return this.itens;
-    }
+class inverterArray<T>(array: T[]) {
+    return array.reverse();
 }
 
-const meuinverterArray = new inverterArray<number>();
-meuinverterArray.adicionarItem(5);
-meuinverterArray.adicionarItem(10);
-console.log(meuinverterArray.obterItens()); 
-const MeuinverterArray = new inverterArray<string>();
-MeuinverterArray.adicionarItem("Olá");
-MeuinverterArray.adicionarItem("Atenção");
-console.log(MeuinverterArray.obterItens()); 
+console.log(inverterArray.(["Tamandua", 10, true]))
 
 //Exercicio 4:
 
-
-class Repositorio<T> {
-    private itens: T[] = [];
-    salvar(dado: T): void {
-        this.itens.push(dado);
+interface Repositorio<T> {
+    salvar(dado: T): void;
+    obterTodos(): T[];
+}
+class UsuarioRepositorio implements Repositorio<{ nome: string; email: string }> {
+    private usuarios: { nome: string; email: string }[] = [];
+    salvar(dado: { nome: string; email: string }): void {
+        this.usuarios.push(dado);
     }
-    obterTodos(): T[] {
-        return this.itens;
+    obterTodos(): { nome: string; email: string }[] {
+        return this.usuarios;
     }
 }
 
-interface Usuario {
-    nome: string
-    email: string
-}
-
-const meuRepositorio = new Repositorio<Usuario>();
-meuRepositorio.salvar({nome: "Gabriel", email: "gabriel@gmail.com"});
-console.log(meuRepositorio.obterTodos()); 
+const repo = new UsuarioRepositorio();
+repo.salvar({ nome: "João", email: "joao@email.com" });
+repo.salvar({ nome: "Maria", email: "maria@email.com" });
+console.log("Lista de usuários:", repo.obterTodos());
 
 //Exercicio 5:
 
-
 type RespostaServidor = string | boolean;
-function processarResposta(rs: RespostaServidor) {
-    console.log(`Buscando Tipo de numero: ${rs}`);
+function processarResposta(resposta: RespostaServidor): void {
+    if (typeof resposta === "string") {
+        console.log(`Resposta do servidor: ${resposta}`);
+    } else if (typeof resposta === "boolean") {
+        console.log(`Operação foi bem-sucedida? ${resposta ? "Sim" : "Não"}`);
+    }
 }
-processarResposta("teste")
+
+processarResposta("Dados processados com sucesso!");
+processarResposta(true);
+processarResposta(false);
 
 
 //Exercicio 6:
