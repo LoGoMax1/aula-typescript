@@ -20,6 +20,7 @@ console.log(meuCarro.marca);
 console.log(meuCarro.modelo);
 console.log(meuCarro.motor);
 
+
 //Exercicio 2:
 
 
@@ -32,6 +33,7 @@ console.log(multiplique(10, 5));
 console.log(multiplicar(10, 7));
 console.log(multiplicar(10, 10));
 
+
 //Exercicios 3:
 
 
@@ -41,7 +43,10 @@ class inverterArray<T>(array: T[]) {
 
 console.log(inverterArray.(["Tamandua", 10, true]))
 
+
+
 //Exercicio 4:
+
 
 interface Repositorio<T> {
     salvar(dado: T): void;
@@ -62,7 +67,10 @@ repo.salvar({ nome: "João", email: "joao@email.com" });
 repo.salvar({ nome: "Maria", email: "maria@email.com" });
 console.log("Lista de usuários:", repo.obterTodos());
 
+
+
 //Exercicio 5:
+
 
 type RespostaServidor = string | boolean;
 function processarResposta(resposta: RespostaServidor): void {
@@ -78,7 +86,9 @@ processarResposta(true);
 processarResposta(false);
 
 
+
 //Exercicio 6:
+
 
 type EstudanteTrabalhador = {
     nome: string;
