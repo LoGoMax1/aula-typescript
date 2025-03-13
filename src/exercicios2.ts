@@ -29,7 +29,7 @@ interface Multiplica {
 const multiplique: Multiplica = (x, y) => x * y;
 
 console.log(multiplique(10, 5));
-console.log(multiplicar(10, 5));
+console.log(multiplicar(10, 7));
 console.log(multiplicar(10, 10));
 
 //Exercicios 3:
